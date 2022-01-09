@@ -1,6 +1,7 @@
 import './App.css';
 import PokemonRow from './components/PokemonRow';
 import PokedexTable from './components/PokedexTable';
+import FilterablePokedexTable from './components/FilterablePokedexTable';
 
 const bulbasaur = {
   id: 1,
@@ -29,6 +30,7 @@ function App() {
     <div className='App'>
       <PokemonRow pokemon={bulbasaur} />
       <PokedexTable pokemonArray={pokemonArray} />
+      <FilterablePokedexTable />
     </div>
   );
 }
