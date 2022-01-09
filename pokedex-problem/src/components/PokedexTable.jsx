@@ -6,8 +6,8 @@ const PokedexTable = (props) => {
   return (
     <div>
       <h1>Pokedex Table</h1>
-      {pokemonArray.map((pokemon) => {
-        return <PokemonRow key={pokemon.id} pokemon={pokemon} />;
+      {pokemonArray.map((pokemon, index) => {
+        return <PokemonRow key={index} pokemon={pokemon} />;
       })}
     </div>
   );

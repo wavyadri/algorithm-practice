@@ -1,36 +1,50 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import PokemonRow from './components/PokemonRow';
-import PokedexTable from './components/PokedexTable';
 import FilterablePokedexTable from './components/FilterablePokedexTable';
+import axios from 'axios';
 
-const bulbasaur = {
-  id: 1,
-  name: 'Bulbasaur',
-  types: ['grass'],
-  sprite: 'https://pokemon.com/pictures/bulbasaur.png',
-};
-
-const pokemonArray = [
-  {
-    id: 1,
-    name: 'Bulbasaur',
-    types: ['grass'],
-    sprite: 'https://pokemon.com/pictures/bulbasaur.png',
-  },
-  {
-    id: 2,
-    name: 'Charmander',
-    types: ['fire'],
-    sprite: 'https://pokemon.com/pictures/bulbasaurr.png',
-  },
-];
+// const pokemonArray = [
+//   {
+//     id: 1,
+//     name: 'Bulbasaur',
+//     types: ['grass'],
+//     sprite: 'https://pokemon.com/pictures/bulbasaur.png',
+//   },
+//   {
+//     id: 2,
+//     name: 'Charmander',
+//     types: ['fire'],
+//     sprite: 'https://pokemon.com/pictures/bulbasaurr.png',
+//   },
+// ];
 
 function App() {
+  const [pokemonArray, setPokemonArray] = useState(null);
+  const fetchData = () => {
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon?limit=50')
+      .then((res) => {
+        const results = res.data.results;
+        setPokemonArray(results);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className='App'>
-      <PokemonRow pokemon={bulbasaur} />
-      <PokedexTable pokemonArray={pokemonArray} />
-      <FilterablePokedexTable />
+      {pokemonArray && (
+        <>
+          <PokemonRow pokemon={pokemonArray[0]} />
+          <FilterablePokedexTable pokemonArray={pokemonArray} />
+        </>
+      )}
     </div>
   );
 }
