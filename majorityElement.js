@@ -1,13 +1,22 @@
 // 169. Majority Element
 // https://leetcode.com/problems/majority-element/
 
-const majorityElement = (nums) => {
+const majorityElement = (arr) => {
+  if (arr.length === 1) {
+    return arr[0];
+  }
+
   let tally = {};
-  let leader = null;
-  for (const num of nums) {
+  let leader = 0;
+  let highestScore = 0;
+  for (const num of arr) {
     if (tally[num]) {
       tally[num]++;
-      leader = num;
+
+      if (tally[num] > highestScore) {
+        leader = num;
+        highestScore = tally[num];
+      }
     } else {
       tally[num] = 1;
     }
@@ -20,4 +29,4 @@ const majorityElement = (nums) => {
   return null;
 };
 
-console.log(majorityElement([3, 2, 3]));
+console.log(majorityElement([6, 6, 6, 7, 7]));
