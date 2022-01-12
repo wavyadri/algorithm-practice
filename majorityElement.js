@@ -20,11 +20,14 @@ const majorityElement = (arr) => {
     } else {
       tally[num] = 1;
     }
+    if (tally[leader] > arr.length / 2) {
+      return leader;
+    }
   }
 
-  if (tally[leader] > arr.length / 2) {
-    return leader;
-  }
+  // if (tally[leader] > arr.length / 2) {
+  //   return leader;
+  // }
 
   return null;
 };
