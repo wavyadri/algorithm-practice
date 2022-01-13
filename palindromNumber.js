@@ -1,7 +1,7 @@
 // 9. Palindrome Number
 
 const palindromeNumber = (num) => {
-  let str = num.toString().toLowerCase();
+  let str = num.toString();
   let length = Math.floor(str.length / 2);
 
   for (let i = 0; i < length; i++) {
