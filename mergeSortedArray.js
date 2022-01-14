@@ -1,5 +1,7 @@
 // 88. Merge Sorted Array
 // https://leetcode.com/problems/merge-sorted-array/
+// Time: O(n)
+// Space: O(1)
 
 const mergeSort = (nums1, m, nums2, n) => {
   // two pointers
