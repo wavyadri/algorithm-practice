@@ -2,6 +2,8 @@
 // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 // 10 Common Coding Interview Problems - Solved!
 // binary search
+// Time O(logn)
+// Space O(1)
 
 const firstAndLast = (nums, target) => {
   if (nums.length === 0) return [-1, -1];
