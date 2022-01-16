@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/single-number/
 // Time: O(n)
 // Space: O(n)
+// hash
 
 const singleNumber = (nums) => {
   let count = {};
