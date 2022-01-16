@@ -1,6 +1,8 @@
 // 26. Remove Duplicates from Sorted Array
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 // two pointer
+// Time: O(n)
+// Space: O(1)
 
 const removeDups = (nums) => {
   var p1 = 0; //pointer1
