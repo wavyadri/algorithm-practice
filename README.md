@@ -1,2 +1,2 @@
 # algorithm-practice
-Leet code, free code camp, and more problem sets.
+Leet code, free code camp, coderbyte and more problem sets.
