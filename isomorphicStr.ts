@@ -5,15 +5,24 @@ function isIsomorphic(s: string, t: string): boolean {
   if (s.length !== t.length) {
     return false;
   }
-  let obj = { [s[0]]: t[0] };
-  for (let i = 1; i < s.length; i++) {
-    if (obj[s[i]]) {
-      if (obj[s[i]] !== t[i]) {
+
+  let objS = {};
+  let objT = {};
+  for (let i = 0; i < s.length; i++) {
+    if (objS[s[i]]) {
+      if (objS[s[i]] !== t[i]) {
         return false;
       }
-    } else {
-      obj[s[i]] = t[i];
     }
+
+    if (objT[t[i]]) {
+      if (objT[t[i]] !== s[i]) {
+        return false;
+      }
+    }
+
+    objS[s[i]] = t[i];
+    objT[t[i]] = s[i];
   }
   return true;
 }
