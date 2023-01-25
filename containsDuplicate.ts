@@ -13,3 +13,12 @@ function containsDuplicate(nums: number[]): boolean {
 
   return false;
 }
+
+// v2
+function containsDuplicateV2(nums: number[]): boolean {
+  const uniqueSet = new Set(nums);
+  if (uniqueSet.size !== nums.length) {
+    return true;
+  }
+  return false;
+}
