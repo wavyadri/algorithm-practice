@@ -1,8 +1,8 @@
 // 387. First Unique Character in a String
 // https://leetcode.com/problems/first-unique-character-in-a-string/
 // hash
-// Time: O(n^2) ???
-// Space: O(n) ???
+// Time: O(n)
+// Space: O(n)
 
 const firstUniqChar = (s) => {
   let map = {};
